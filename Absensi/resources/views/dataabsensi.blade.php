@@ -11,29 +11,27 @@
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
 <div class="container">
-    <h2> Data Mahasiswa </h2>
+    <h2> Data Absensi </h2>
 	<div class="row">
         <div class="table-responsive">                
             <table id="mytable" class="table table-bordred table-striped">
                 <thead>
-                    <th>Nama Lengkap</th>
-                    <th>NIM</th>
-                    <th>Jurusan</th>
-                    <th>Fakultas</th>
-                    <th>Universitas</th>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Nim</th>
+                    <th>Kehadiran</th>
                 </thead>
             <tbody> 
-                @foreach($mahasiswa as $mhs)
+                @foreach($absensi as $mhs)
                 <tr>
+                    <td>{{$mhs->id}}</td>
                     <td>{{$mhs->nama}}</td>
                     <td>{{$mhs->nim}}</td>
-                    <td>{{$mhs->jurusan}}</td>
-                    <td>{{$mhs->fakultas}}</td>
-                    <td>{{$mhs->univ}}</td>
+                    <td>{{$mhs->kehadiran}}</td>
                     <td>
-                        <a href="/mahasiswa/edit/{{ $mhs->nim}}">Edit</a>
+                        <a href="/absensi/edit/{{ $mhs->nim}}">Edit</a>
                         <!-- <a href="">Edit</a>&nbsp;&nbsp;&nbsp; -->
-                        <a style="color:red;" href="/mahasiswa/hapus/{{ $mhs->nim}}">Hapus</a>
+                        <a style="color:red;" href="/absensi/hapus/{{ $mhs->nim}}">Hapus</a>
                     </td>
                 </tr>
                 @endforeach
